@@ -1,3 +1,5 @@
+import { DatabaseType } from "typeorm";
+
 export type AppConfig = {
   nodeEnv: string;
   name: string;
@@ -18,6 +20,7 @@ export type DatabaseConfig = {
   password?: string;
   database?: string;
   synchronize?: boolean;
+  logging?: boolean;
 };
 
 export type AllConfigType = {
