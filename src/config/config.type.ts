@@ -1,5 +1,3 @@
-import { DatabaseType } from "typeorm";
-
 export type AppConfig = {
   nodeEnv: string;
   name: string;

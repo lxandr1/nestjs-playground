@@ -1,9 +1,12 @@
-import { Inject, Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import appConfig from './config/app.config';
 import databaseConfig from './config/database.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeormConfigService } from './database/typeorm-config.service';
+import { ShippingsModule } from './modules/shippings/shippings.module';
+// import { UsersModule } from './modules/users/users.module';
+// import { TestModule } from './modules/test/test.module';
 
 @Module({
   imports: [
@@ -13,8 +16,9 @@ import { TypeormConfigService } from './database/typeorm-config.service';
       envFilePath: ['.env'],
     }),
     TypeOrmModule.forRootAsync({
-      useClass: TypeormConfigService
+      useClass: TypeormConfigService,
     }),
+    ShippingsModule,
   ],
   controllers: [],
   providers: [],
