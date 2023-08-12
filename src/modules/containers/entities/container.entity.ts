@@ -13,8 +13,8 @@ export enum Status {
   DONE = 'done',
 }
 
-@Entity('shippings')
-export class ShippingEntity {
+@Entity('containers')
+export class ContainerEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
